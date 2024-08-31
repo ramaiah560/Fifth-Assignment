@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Assessment</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="test.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Create Assessment</h1>
+    </header>
+    <main>
+        <form id="assessmentForm">
+            <section>
+                <label for="title">Assessment Title:</label>
+                <input type="text" id="title" name="title" required>
+            </section>
+
+            <section>
+                <label for="type">Assessment Type:</label>
+                <select id="type" name="type" required>
+                    <option value="">Select Type</option>
+                    <option value="quiz">Quiz</option>
+                    <option value="assignment">Assignment</option>
+                    <option value="survey">Survey</option>
+                </select>
+            </section>
+
+            <section>
+                <label for="questionBank">Question Bank Access:</label>
+                <select id="questionBank" name="questionBank">
+                    <option value="">Select or Create</option>
+                    <option value="existing">Select from Existing</option>
+                    <option value="create">Create New Questions</option>
+                </select>
+            </section>
+
+            <section id="questionCreation" style="display: none;">
+                <h3>Create Questions</h3>
+                <div id="questionTypes">
+                    <button type="button" onclick="addQuestion('multipleChoice')">Add Multiple Choice</button>
+                    <button type="button" onclick="addQuestion('shortAnswer')">Add Short Answer</button>
+                    <button type="button" onclick="addQuestion('essay')">Add Essay</button>
+                    <button type="button" onclick="addQuestion('trueFalse')">Add True/False</button>
+                </div>
+                <div id="questionsContainer"></div>
+            </section>
+
+            <section>
+                <label for="grading">Grading Options:</label>
+                <select id="grading" name="grading">
+                    <option value="automated">Automated Grading</option>
+                    <option value="manual">Manual Grading</option>
+                </select>
+            </section>
+
+            <section>
+                <label for="instructions">Assessment Instructions:</label>
+                <textarea id="instructions" name="instructions" rows="4" required></textarea>
+            </section>
+
+            <section>
+                <label for="timeLimit">Time Limit (minutes):</label>
+                <input type="number" id="timeLimit" name="timeLimit">
+            </section>
+
+            <section>
+                <label for="attempts">Number of Attempts:</label>
+                <input type="number" id="attempts" name="attempts">
+            </section>
+
+            <section>
+                <label for="feedback">Feedback Options:</label>
+                <select id="feedback" name="feedback">
+                    <option value="immediate">Immediate Feedback</option>
+                    <option value="delayed">Delayed Feedback</option>
+                </select>
+            </section>
+
+            <section>
+                <label for="courseLink">Link to Course Content:</label>
+                <input type="text" id="courseLink" name="courseLink" placeholder="e.g., Module 3: Chapter 5">
+            </section>
+
+            <section>
+                <button type="button" onclick="previewAssessment()">Preview</button>
+                <button type="submit">Save as Draft</button>
+                <button type="submit">Publish</button>
+            </section>
+        </form>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
